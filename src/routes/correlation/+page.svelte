@@ -13,7 +13,7 @@
     {
       label: "Upload Files",
       component: FileUpload,
-      isValid: () => true, //$wells.length > 1,
+      isValid: () => $wells.length > 1,
     },
     {
       label: "Well Information",
