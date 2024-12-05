@@ -38,12 +38,12 @@
   ];
 </script>
 
-<div class="container mx-auto px-4 py-8 max-w-4xl">
+<div class="container mx-auto px-4 py-8 max-w-4xl bg-white dark:bg-gray-700">
   <h1 class="text-3xl font-bold mb-8">Well Data Visualization</h1>
 
   <ProgressBar {steps} />
 
-  <div class="bg-white shadow-md rounded-lg p-6">
+  <div class="bg-white dark:bg-gray-700 dark:text-white shadow-md rounded-lg p-6">
     <svelte:component this={steps[$currentStep].component} />
   </div>
 

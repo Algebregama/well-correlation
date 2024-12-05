@@ -10,13 +10,13 @@
     <div class="flex items-center">
       <div
         class="w-8 h-8 rounded-full flex items-center justify-center
-          {$currentStep === index ? 'bg-blue-500 text-white' :
-           $currentStep > index ? 'bg-green-500 text-white' :
+          {$currentStep === index ? 'bg-blue-500 dark:text-white' :
+           $currentStep > index ? 'bg-green-500 dark:text-white' :
            'bg-gray-200 text-gray-700'}"
       >
         {index + 1}
       </div>
-      <div class="ml-2 text-sm font-medium text-gray-700">{step.label}</div>
+      <div class="ml-2 text-sm font-medium text-gray-700 dark:text-white">{step.label}</div>
       {#if index < steps.length - 1}
         <div class="w-full h-0.5 mx-4 bg-gray-200"></div>
       {/if}
