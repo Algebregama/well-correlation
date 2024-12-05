@@ -28,8 +28,8 @@
 
 <div class="space-y-6">
   <div class="flex flex-col">
-    <label class="text-sm font-medium text-gray-700">Paper Size</label>
-    <select
+    <label class="text-sm font-medium text-gray-700" for="size">Paper Size</label>
+    <select id="size"
       on:change={handleSizeChange}
       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm"
     >
@@ -43,8 +43,9 @@
   {#if customSize}
     <div class="grid grid-cols-2 gap-4">
       <div class="flex flex-col">
-        <label class="text-sm font-medium text-gray-700">Width (mm)</label>
+        <label class="text-sm font-medium text-gray-700" for="width">Width (mm)</label>
         <input
+          id="width"
           type="number"
           bind:value={customWidth}
           min="1"
@@ -53,8 +54,9 @@
         />
       </div>
       <div class="flex flex-col">
-        <label class="text-sm font-medium text-gray-700">Height (mm)</label>
+        <label class="text-sm font-medium text-gray-700" for="height">Height (mm)</label>
         <input
+          id="height"
           type="number"
           bind:value={customHeight}
           min="1"
