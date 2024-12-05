@@ -128,7 +128,36 @@ export const createWellVisualization = (wells: WellData[], paperSize: PaperSize)
     .attr('font-weight', 'bold')
     .text(formation.name);
 });
+// Ajout de la légende pour les formations
+const legendX = svgWidth - margin.right + 20; // Position X de la légende
+const legendY = margin.top; // Position Y de départ de la légende
+const legendSpacing = 20; // Espacement entre les éléments de la légende
 
+const legend = svg.append('g')
+  .attr('class', 'legend');
+
+// Ajout des entrées de la légende
+wells[0].formations.forEach((formation, index) => {
+  const legendEntryY = legendY + index * legendSpacing;
+
+  // Carré coloré
+  legend.append('rect')
+    .attr('x', legendX-70)
+    .attr('y', legendEntryY)
+    .attr('width', 12)
+    .attr('height', 12)
+    .attr('fill', formation.color || generateRandomColor())
+    .attr('stroke', config.containerStroke)
+    .attr('stroke-width', 0.5);
+
+  // Texte du nom de la formation
+  legend.append('text')
+    .attr('x', legendX -30) // Position après le carré
+    .attr('y', legendEntryY + 10) // Centrer avec le carré
+    .attr('font-size', '12px')
+    .attr('font-family', 'Arial, sans-serif')
+    .text(formation.name || `Formation ${index + 1}`);
+});
 
   return svg.node();
 };
