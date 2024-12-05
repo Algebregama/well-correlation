@@ -80,5 +80,5 @@
 </nav>
 
 <ThemeSwitch />
-            {@render children()}
+{@render children()}
 

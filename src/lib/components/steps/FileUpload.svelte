@@ -69,7 +69,7 @@
 </script>
 
 <form on:submit={handleUpload} class="space-y-4">
-  <div class="flex flex-col bg-white  divide-gray-100  shadow w-44 dark:bg-gray-700">
+  <div class="flex flex-col bg-white dark:bg-gray-700">
     <label class="text-sm font-medium text-gray-700">Upload Well Files</label>
     <input
       type="file"
